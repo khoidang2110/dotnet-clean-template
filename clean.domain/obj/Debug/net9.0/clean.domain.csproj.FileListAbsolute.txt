@@ -1,0 +1,12 @@
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.domain/bin/Debug/net9.0/clean.domain.deps.json
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.domain/bin/Debug/net9.0/clean.domain.dll
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.domain/bin/Debug/net9.0/clean.domain.pdb
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.domain/obj/Debug/net9.0/clean.domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.domain/obj/Debug/net9.0/clean.domain.AssemblyInfoInputs.cache
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.domain/obj/Debug/net9.0/clean.domain.AssemblyInfo.cs
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.domain/obj/Debug/net9.0/clean.domain.csproj.CoreCompileInputs.cache
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.domain/obj/Debug/net9.0/clean.domain.dll
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.domain/obj/Debug/net9.0/refint/clean.domain.dll
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.domain/obj/Debug/net9.0/clean.domain.pdb
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.domain/obj/Debug/net9.0/ref/clean.domain.dll
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.domain/obj/Debug/net9.0/clean.domain.csproj.AssemblyReference.cache

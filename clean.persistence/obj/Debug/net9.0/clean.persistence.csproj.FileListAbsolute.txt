@@ -1,0 +1,17 @@
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.persistence/bin/Debug/net9.0/clean.persistence.deps.json
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.persistence/bin/Debug/net9.0/clean.persistence.dll
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.persistence/bin/Debug/net9.0/clean.persistence.pdb
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.persistence/bin/Debug/net9.0/clean.application.dll
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.persistence/bin/Debug/net9.0/clean.domain.dll
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.persistence/bin/Debug/net9.0/clean.domain.pdb
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.persistence/bin/Debug/net9.0/clean.application.pdb
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.persistence/obj/Debug/net9.0/clean.persistence.csproj.AssemblyReference.cache
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.persistence/obj/Debug/net9.0/clean.persistence.GeneratedMSBuildEditorConfig.editorconfig
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.persistence/obj/Debug/net9.0/clean.persistence.AssemblyInfoInputs.cache
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.persistence/obj/Debug/net9.0/clean.persistence.AssemblyInfo.cs
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.persistence/obj/Debug/net9.0/clean.persistence.csproj.CoreCompileInputs.cache
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.persistence/obj/Debug/net9.0/clean.pe.BAA15A54.Up2Date
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.persistence/obj/Debug/net9.0/clean.persistence.dll
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.persistence/obj/Debug/net9.0/refint/clean.persistence.dll
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.persistence/obj/Debug/net9.0/clean.persistence.pdb
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.persistence/obj/Debug/net9.0/ref/clean.persistence.dll

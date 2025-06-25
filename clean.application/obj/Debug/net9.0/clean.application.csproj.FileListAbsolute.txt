@@ -1,0 +1,15 @@
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.application/bin/Debug/net9.0/clean.application.deps.json
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.application/bin/Debug/net9.0/clean.application.dll
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.application/bin/Debug/net9.0/clean.application.pdb
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.application/bin/Debug/net9.0/clean.domain.dll
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.application/bin/Debug/net9.0/clean.domain.pdb
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.application/obj/Debug/net9.0/clean.application.csproj.AssemblyReference.cache
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.application/obj/Debug/net9.0/clean.application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.application/obj/Debug/net9.0/clean.application.AssemblyInfoInputs.cache
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.application/obj/Debug/net9.0/clean.application.AssemblyInfo.cs
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.application/obj/Debug/net9.0/clean.application.csproj.CoreCompileInputs.cache
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.application/obj/Debug/net9.0/clean.ap.D7DF23F1.Up2Date
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.application/obj/Debug/net9.0/clean.application.dll
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.application/obj/Debug/net9.0/refint/clean.application.dll
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.application/obj/Debug/net9.0/clean.application.pdb
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.application/obj/Debug/net9.0/ref/clean.application.dll

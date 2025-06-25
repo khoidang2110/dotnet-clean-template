@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "47vyDLbbgjsF9OaSVRzTbWT4ixn87M+/pOHkF0skBPk=",
+  "Source": "clean.api",
+  "BasePath": "_content/clean.api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
