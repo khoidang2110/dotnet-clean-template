@@ -15,24 +15,23 @@ A simple .NET 9 Web API project following the Clean Architecture pattern.
 ```text
 clean/
 │
-├── clean.api/             # Startup project - entry point
-│   └── Controllers/       # Define your API endpoints (Controllers)
+├── clean.api/               # Startup project - Entry point of the app
+│   └── Controllers/         # API endpoint definitions
 │
-├── clean.application/     # Application layer (CQRS + business logic)
-│   ├── Features/
-│   │   └── [Entity]/
-│   │       ├── Commands/
-│   │       ├── Queries/
-│   │       └── Handlers/
-│   └── Contracts/         # Interfaces (e.g. IRepository)
+├── clean.application/       # Application layer (CQRS, business logic)
+│   ├── Features/            # Use case logic (Commands, Queries, Handlers)
+│   └── Contracts/           # Abstractions (e.g. IRepository)
 │
-├── clean.domain/          # Domain layer (Entities)
+├── clean.domain/            # Domain layer - business entities
 │   └── Entities/
 │
-├── clean.persistence/     # Infrastructure layer (EF + DB config)
+├── clean.persistence/       # Infrastructure layer (EF Core, DB config)
 │   ├── AppDbContext.cs
 │   ├── Configurations/
-│   └── Repositories/
+│   └── Repositories/        # Repository implementations
+│
+├── clean.infrastructure/    # Dependency injection and other infra services
+│   └── DependencyInjection.cs # Register services into DI container
 ```
 
 ## ▶️ How to Run
