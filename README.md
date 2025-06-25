@@ -44,27 +44,31 @@ clean/
    dotnet run
    ```
 
-2. **Add a new Controller**:
+2. **Access Swagger UI**:
+   Open your browser and go to:
+   [http://localhost:5111/swagger/index.html](http://localhost:5111/swagger/index.html)
+
+3. **Add a new Controller**:
 
    * Create a new file in `clean.api/Controllers/`.
 
-3. **Add a new Feature**:
+4. **Add a new Feature**:
 
    * Define `Command`, `Query`, and `Handler` inside `clean.application/Features/{EntityName}/`.
 
-4. **Define Contract Interface**:
+5. **Define Contract Interface**:
 
    * Create `I{Entity}Repository` inside `clean.application/Contracts/`.
 
-5. **Implement Repository**:
+6. **Implement Repository**:
 
    * Implement it in `clean.persistence/Repositories/`.
 
-6. **Define Entity**:
+7. **Define Entity**:
 
    * Define model in `clean.domain/Entities/`.
 
-7. **Configure Entity Mapping**:
+8. **Configure Entity Mapping**:
 
    * Configure DB mapping in `clean.persistence/Configurations/`.
 
