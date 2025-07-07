@@ -21,7 +21,7 @@ Log.Logger = new LoggerConfiguration()
     .ReadFrom.Configuration(builder.Configuration)
     .Enrich.FromLogContext()
     .WriteTo.Console()
-    .WriteTo.Seq("http://seq:80")
+    .WriteTo.Seq("http://seq:5341")
     .CreateLogger();
 
 builder.Host.UseSerilog();
