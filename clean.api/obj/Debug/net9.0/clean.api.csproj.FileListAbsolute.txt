@@ -205,3 +205,5 @@
 /Users/khoidang/Documents/CODE/DotNet/clean/clean.api/bin/Debug/net9.0/tr-TR/Hangfire.Core.resources.dll
 /Users/khoidang/Documents/CODE/DotNet/clean/clean.api/bin/Debug/net9.0/zh-TW/Hangfire.Core.resources.dll
 /Users/khoidang/Documents/CODE/DotNet/clean/clean.api/bin/Debug/net9.0/zh/Hangfire.Core.resources.dll
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.api/obj/Debug/net9.0/clean.api.sourcelink.json
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.api/bin/Debug/net9.0/Hangfire.MemoryStorage.dll

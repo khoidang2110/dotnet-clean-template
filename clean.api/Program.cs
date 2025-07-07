@@ -1,5 +1,4 @@
 using System;
-
 using application.Services;
 using Microsoft.EntityFrameworkCore;
 using persistence;
@@ -9,78 +8,85 @@ using System.Reflection;
 using MediatR;
 using application.Contract.Repo;
 using Microsoft.Extensions.DependencyInjection;
+using galaxy_pay.infrastructure.Hubs;
+using Hangfire;
+using Hangfire.MemoryStorage;
+using galaxy_pay.infrastructure.Jobs;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+// Cấu hình Serilog
+Log.Logger = new LoggerConfiguration()
+    .ReadFrom.Configuration(builder.Configuration)
+    .Enrich.FromLogContext()
+    .WriteTo.Console()
+    .WriteTo.Seq("http://seq:80")
+    .CreateLogger();
 
+builder.Host.UseSerilog();
+
+builder.WebHost.UseUrls("http://0.0.0.0:5111");
+
+// Add services
+builder.Services.AddOpenApi();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddHangfire(config =>
+{
+    config.UseMemoryStorage();
+});
 
-//var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddHangfireServer();
 
-// Add DbContext
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend", policy =>
+    {
+        policy
+            .WithOrigins("http://127.0.0.1:5500", "http://localhost:5500") // cho chắc ăn
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials();
+    });
+});
+
+builder.Services.AddSignalR();
+
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Add repository and service DI
 builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<ProductService>();
 
-// Add controllers
 builder.Services.AddControllers();
-
-// Gọi DI từ các tầng
 builder.Services.AddInfrastructure();
 builder.Services.AddPersistence(builder.Configuration);
-builder.Services.AddScoped<ProductService>(); // đăng ký service application
-//builder.Services.AddMediatR(Assembly.Load("application")); // hoặc typeof(CreateProductCommand).Assembly
+
 builder.Services.AddMediatR(cfg =>
 {
     cfg.RegisterServicesFromAssembly(typeof(ProductService).Assembly);
 });
 
-
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-}
-
-//app.UseHttpsRedirection();
-
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
-
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
+// Middleware
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.MapOpenApi();
 }
-app.MapControllers(); // <<< dòng quan trọng để Controller hoạt động
+
+// app.UseHttpsRedirection(); // Uncomment nếu cần HTTPS
+
+app.UseRouting(); // cần thiết trước MapHub
+app.UseCors("AllowFrontend");
+app.UseAuthorization();
+app.UseHangfireDashboard();
+JobScheduler.ScheduleJobs(builder.Configuration);
+
+app.MapControllers();
+app.MapHub<NotificationHub>("/hubs/notifications");
 
 app.Run();
-
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
