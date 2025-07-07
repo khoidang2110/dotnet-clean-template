@@ -13,3 +13,4 @@
 /Users/khoidang/Documents/CODE/DotNet/clean/clean.application/obj/Debug/net9.0/refint/clean.application.dll
 /Users/khoidang/Documents/CODE/DotNet/clean/clean.application/obj/Debug/net9.0/clean.application.pdb
 /Users/khoidang/Documents/CODE/DotNet/clean/clean.application/obj/Debug/net9.0/ref/clean.application.dll
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.application/obj/Debug/net9.0/clean.application.sourcelink.json

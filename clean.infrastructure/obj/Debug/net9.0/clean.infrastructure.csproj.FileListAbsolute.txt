@@ -17,3 +17,4 @@
 /Users/khoidang/Documents/CODE/DotNet/clean/clean.infrastructure/obj/Debug/net9.0/ref/clean.infrastructure.dll
 /Users/khoidang/Documents/CODE/DotNet/clean/clean.infrastructure/bin/Debug/net9.0/clean.persistence.dll
 /Users/khoidang/Documents/CODE/DotNet/clean/clean.infrastructure/bin/Debug/net9.0/clean.persistence.pdb
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.infrastructure/obj/Debug/net9.0/clean.infrastructure.sourcelink.json

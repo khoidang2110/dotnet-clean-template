@@ -1,0 +1,20 @@
+services:
+  app:
+    container_name: cleanarch-api
+    build:
+      context: .
+      dockerfile: clean.api/Dockerfile
+    ports:
+      - "5111:5111"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:5111
+
+    working_dir: /app
+    command: ["dotnet", "clean.api.dll"]
+    networks:
+      - seq-network  # <-- kết nối network đã tạo
+
+networks:
+  seq-network:
+    external: true  # <-- dùng mạng đã tạo sẵn bên ngoài

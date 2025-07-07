@@ -10,3 +10,4 @@
 /Users/khoidang/Documents/CODE/DotNet/clean/clean.domain/obj/Debug/net9.0/clean.domain.pdb
 /Users/khoidang/Documents/CODE/DotNet/clean/clean.domain/obj/Debug/net9.0/ref/clean.domain.dll
 /Users/khoidang/Documents/CODE/DotNet/clean/clean.domain/obj/Debug/net9.0/clean.domain.csproj.AssemblyReference.cache
+/Users/khoidang/Documents/CODE/DotNet/clean/clean.domain/obj/Debug/net9.0/clean.domain.sourcelink.json
