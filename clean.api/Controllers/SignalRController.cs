@@ -1,8 +1,8 @@
 // Presentation/Controllers/NotificationController.cs
-using galaxy_pay.application.Contracts;
+using clean.application.Contracts;
 using Microsoft.AspNetCore.Mvc;
 
-namespace galaxy_pay.api.Controllers;
+namespace clean.api.Controllers;
 
 [ApiController]
 [Route("api/signal")]

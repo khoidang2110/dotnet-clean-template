@@ -8,10 +8,10 @@ using System.Reflection;
 using MediatR;
 using application.Contract.Repo;
 using Microsoft.Extensions.DependencyInjection;
-using galaxy_pay.infrastructure.Hubs;
+using clean.infrastructure.Hubs;
 using Hangfire;
 using Hangfire.MemoryStorage;
-using galaxy_pay.infrastructure.Jobs;
+using clean.infrastructure.Jobs;
 using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -26,17 +26,17 @@ Log.Logger = new LoggerConfiguration()
 
 builder.Host.UseSerilog();
 
+// Cấu hình cổng chạy app
 builder.WebHost.UseUrls("http://0.0.0.0:5111");
 
-// Add services
-builder.Services.AddOpenApi();
-builder.Services.AddEndpointsApiExplorer();
+// Đăng ký dịch vụ
 builder.Services.AddSwaggerGen();
+builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddHangfire(config =>
 {
     config.UseMemoryStorage();
 });
-
 builder.Services.AddHangfireServer();
 
 builder.Services.AddCors(options =>
@@ -44,7 +44,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowFrontend", policy =>
     {
         policy
-            .WithOrigins("http://127.0.0.1:5500", "http://localhost:5500") // cho chắc ăn
+            .WithOrigins("http://127.0.0.1:5500", "http://localhost:5500") // frontend local
             .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowCredentials();
@@ -60,6 +60,8 @@ builder.Services.AddScoped<IProductRepository, ProductRepository>();
 builder.Services.AddScoped<ProductService>();
 
 builder.Services.AddControllers();
+builder.Services.AddHttpClient(); // ✅ Bắt buộc khi dùng IHttpClientFactory
+
 builder.Services.AddInfrastructure();
 builder.Services.AddPersistence(builder.Configuration);
 
@@ -74,15 +76,19 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
-    app.MapOpenApi();
+    app.UseSwaggerUI(c =>
+    {
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Clean API V1");
+        c.RoutePrefix = "swagger";
+    });
 }
 
-// app.UseHttpsRedirection(); // Uncomment nếu cần HTTPS
+// app.UseHttpsRedirection(); // Bật nếu triển khai HTTPS
 
-app.UseRouting(); // cần thiết trước MapHub
+app.UseRouting();
 app.UseCors("AllowFrontend");
 app.UseAuthorization();
+
 app.UseHangfireDashboard();
 JobScheduler.ScheduleJobs(builder.Configuration);
 
